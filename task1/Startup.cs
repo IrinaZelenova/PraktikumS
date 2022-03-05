@@ -18,6 +18,7 @@ namespace task1
     {
         public Startup(IConfiguration configuration)
         {
+          
             Configuration = configuration;
         }
 
@@ -41,7 +42,8 @@ namespace task1
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "task1 v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "task1"));
+                app.UseDeveloperExceptionPage();
             }
 
             app.UseHttpsRedirection();
