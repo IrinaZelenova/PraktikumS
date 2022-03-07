@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,12 +9,20 @@ namespace task1.Data
 {
     /// <summary>
     /// 2.2	Класс книга
+    /// 2.2.1**.	Добавьте валидации в ваши сущности: все обязательные поля должны быть NotNull.
     /// </summary>
     public class Book
     {
+       
         public int Id { get; set; }
+
+        [Required]
         public string Title { get; set; }
+
+        [Required]
         public int Author { get; set; }
+
+        [Required]
         public GenreType Genre { get; set; }
         
     }
@@ -39,5 +48,23 @@ namespace task1.Data
         Novel = 1
     }
 
-    
+    public enum SortType
+    {
+        [Description("В порядке убывания")]
+        descending = -1,
+        [Description("В порядке возрастания")]
+        ascending = 1
+    }
+
+    public class BookAuthor
+    {
+        public string Title { get; set; }
+        public GenreType Genre { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string Patronymic { get; set; }
+        public DateTime Birthday { get; set; }
+    }
+
+
 }

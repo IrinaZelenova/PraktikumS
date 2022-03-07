@@ -57,6 +57,7 @@ namespace task1.Controllers
         [Route("AddHuman")]
         public void AddHuman(Human human)
         {
+            human.Id = _people.human.Max(x => x.Id) + 1;
             _people.human.Add(human);
         }
 
@@ -68,7 +69,7 @@ namespace task1.Controllers
         public void DeleteHuman(int id)
         {
             var human = _people.human.Where(x => x.Id == id).FirstOrDefault();
-            _people.human.Remove(human);
+            if (human!=null) _people.human.Remove(human);
         }
 
     }

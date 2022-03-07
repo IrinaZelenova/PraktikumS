@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,13 +8,21 @@ namespace task1.Data
 {
     /// <summary>
     /// 2.2.1 Класс Человек
+    /// 2.2.1**.	Добавьте валидации в ваши сущности: все обязательные поля должны быть NotNull.
     /// </summary>
     public class Human
     {
         public int Id { get; set; }
+        
+        [Required]
         public string Name { get; set; }
+       
+        [Required]
         public string Surname { get; set; }
+       
         public string Patronymic { get; set; }
+        
+        [Required]
         public DateTime Birthday { get; set; }
                 
     }
