@@ -7,6 +7,7 @@ using task1.Data;
 
 namespace task1.Controllers
 {
+    [ApiController]
     public class LibraryCardController : Controller
     {
         static LibraryCards _libraryCards = new LibraryCards();

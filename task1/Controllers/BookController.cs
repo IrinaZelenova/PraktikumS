@@ -8,6 +8,7 @@ using task1.Data;
 
 namespace task1.Controllers
 {
+    [ApiController]
     public class BookController : Controller
     {
         static Library _library = new Library();
@@ -22,6 +23,7 @@ namespace task1.Controllers
         [Route("GetAllBooks")]
         public List<Book> GetAllBooks()
         {
+           // System.Threading.Thread.Sleep(5000);
             return _library.books;
         }
 

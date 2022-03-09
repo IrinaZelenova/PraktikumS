@@ -11,6 +11,7 @@ namespace task1.Controllers
     /// <summary>
     /// 3.	контроллер, который отвечает за человека
     /// </summary>
+    [ApiController]
     public class HumanController : Controller
     {
         static People _people=new People();
