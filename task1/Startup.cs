@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using task1.Service;
 
 namespace task1
 {
@@ -46,6 +47,8 @@ namespace task1
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseMiddleware<AuthorizationMiddleware>();
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -56,6 +59,8 @@ namespace task1
             {
                 endpoints.MapControllers();
             });
+
+           
         }
     }
 }

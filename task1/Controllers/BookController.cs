@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace task1.Controllers
         static Library _library = new Library();
         static People _people = new People();
 
+
+        
         /// <summary>
         /// 4.1.1.	Список всех книг
         /// </summary>
